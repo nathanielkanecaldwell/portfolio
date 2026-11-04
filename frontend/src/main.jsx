@@ -10,7 +10,6 @@ import portfolio from './content/portfolio.json';
 
 import matchforthLogo from './assets/logos/matchforth.png';
 import inNeedLogo from './assets/logos/in-need.png';
-import thirdAppLogo from './assets/logos/app-three.svg';
 
 import githubLogo from './assets/socials/github.svg';
 import linkedinLogo from './assets/socials/linkedin.svg';
@@ -23,7 +22,6 @@ import './styles.css';
 const APP_LOGOS = {
     'matchforth.png': matchforthLogo,
     'in-need.png': inNeedLogo,
-    'app-three.svg': thirdAppLogo,
 };
 
 const SOCIAL_LOGOS = {
