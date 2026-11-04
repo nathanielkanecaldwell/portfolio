@@ -1,0 +1,31 @@
+{
+  "name": "Nathaniel Caldwell",
+  "job_title": "Software Engineer / App Developer",
+  "email": "nathanielkanecaldwell@gmail.com",
+  "socials": [
+    {
+      "platform": "github",
+      "url": "https://github.com/nathanielkanecaldwell"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/nathaniel-caldwell"
+    },
+    {
+      "platform": "facebook",
+      "url": "https://facebook.com/bloobiebla"
+    }
+  ],
+  "apps": [
+    {
+      "name": "Matchforth",
+      "logo": "matchforth.png",
+      "url": "https://matchforth.com"
+    },
+    {
+      "name": "In Need",
+      "logo": "in-need.png",
+      "url": "https://in-need.us"
+    }
+  ]
+}

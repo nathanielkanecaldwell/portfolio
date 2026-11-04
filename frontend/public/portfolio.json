@@ -1,0 +1,15 @@
+{
+  "name": "Your Name",
+  "job_title": "Software Engineer / App Developer",
+  "email": "your@email.com",
+  "socials": [
+    { "platform": "github", "url": "" },
+    { "platform": "linkedin", "url": "" },
+    { "platform": "x", "url": "" }
+  ],
+  "apps": [
+    { "name": "App One", "logo": "/logos/app-one.svg", "url": "" },
+    { "name": "App Two", "logo": "/logos/app-two.svg", "url": "" },
+    { "name": "App Three", "logo": "/logos/app-three.svg", "url": "" }
+  ]
+}

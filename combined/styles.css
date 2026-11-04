@@ -1,0 +1,515 @@
+/*
+ * Copyright 2026 Nathaniel Caldwell
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+:root {
+  color: #222428;
+  background: #fdfcfb;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* ========================================
+   PAGE LAYOUT
+======================================== */
+
+.portfolio-layout {
+  display: grid;
+  grid-template-columns: minmax(315px, 28%) minmax(0, 1fr);
+  min-height: 100svh;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 80px;
+
+  min-height: 100svh;
+  padding: clamp(34px, 3.8vw, 66px)
+           clamp(25px, 3.55vw, 65px);
+
+  color: #f7f7f7;
+  background: #111214;
+  border-right: 1px solid #2a2d31;
+}
+
+
+/* ========================================
+   IDENTITY / NAME
+======================================== */
+
+.identity h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(54px, 4.4vw, 82px);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+
+  color: #ffffff;
+  margin: 0 0 28px;
+
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+.identity h1::after {
+  content: "";
+  display: block;
+
+  width: 72px;
+  height: 2px;
+  margin-top: 24px;
+
+  background: #ffffff;
+  opacity: 0.7;
+}
+
+.identity p {
+  max-width: 320px;
+  margin: 0;
+
+  font-size: clamp(15px, 1.25vw, 19px);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 1.6;
+
+  color: #b6b8bd;
+}
+
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+
+/* ========================================
+   SOCIAL LINKS
+======================================== */
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+
+  background: #292b2f;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.social-link[href]:hover {
+  background: #404348;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px #00000030;
+}
+
+.social-brand {
+  display: block;
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.social-brand__fallback {
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   EMAIL LINK
+======================================== */
+
+.email-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding-top: 25px;
+  border-top: 1px solid #3b3d41;
+
+  font-size: clamp(13px, 1.2vw, 18px);
+  color: #cbced3;
+  text-decoration: none;
+  word-break: break-word;
+
+  transition: color 0.2s ease;
+}
+
+.email-link:hover {
+  color: #ffffff;
+}
+
+.email-link svg {
+  flex-shrink: 0;
+}
+
+.email-link span {
+  overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   APPLICATION GALLERY
+======================================== */
+
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  padding: clamp(30px, 5vw, 80px)
+           clamp(24px, 4vw, 78px);
+}
+
+.app-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.5vw, 34px);
+
+  width: 100%;
+  max-width: 1040px;
+}
+
+
+/* ========================================
+   APPLICATION CARDS
+======================================== */
+
+.app-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 4.1vw, 63px);
+
+  min-height: clamp(155px, 17.5vh, 222px);
+
+  padding: clamp(22px, 2.5vw, 36px)
+           clamp(24px, 3.2vw, 47px);
+
+  border: 1px solid #e1dcda;
+  border-radius: 20px;
+
+  background: #fffefd;
+  text-decoration: none;
+
+  transition:
+    background 0.23s ease,
+    transform 0.23s ease,
+    box-shadow 0.23s ease,
+    border-color 0.23s ease;
+}
+
+.app-card[href]:hover {
+  background: #faf7f5;
+  border-color: #d4cac6;
+
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px #4a30200f;
+}
+
+.app-card[href]:focus-visible,
+.social-link[href]:focus-visible,
+.email-link:focus-visible {
+  outline: 3px solid #5289bd;
+  outline-offset: 4px;
+}
+
+.is-placeholder {
+  cursor: default;
+}
+
+
+/* ========================================
+   APPLICATION LOGOS
+======================================== */
+
+.app-card__logo {
+  display: block;
+  flex-shrink: 0;
+
+  width: clamp(90px, 11vw, 145px);
+  aspect-ratio: 1;
+
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.app-card__logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.app-card__logo-fallback {
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  color: #ffffff;
+  background: #304a64;
+
+  font-family: Arial, sans-serif;
+  font-size: clamp(27px, 4vw, 48px);
+  font-weight: 700;
+}
+
+
+/* ========================================
+   APPLICATION NAME
+======================================== */
+
+.app-card__name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3.1vw, 51px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   EXTERNAL LINK ICON
+======================================== */
+
+.app-card__external {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  margin-left: auto;
+  color: #70757c;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.app-card[href]:hover .app-card__external {
+  color: #234f44;
+  transform: translate(3px, -3px);
+}
+
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1500px) {
+  .sidebar {
+    padding-top: 90px;
+    padding-bottom: 65px;
+  }
+}
+
+
+/* ========================================
+   TABLET — 1050px AND BELOW
+======================================== */
+
+@media (max-width: 1050px) {
+  .portfolio-layout {
+    grid-template-columns: minmax(280px, 32%) minmax(0, 1fr);
+  }
+
+  .sidebar {
+    padding: 38px 28px;
+  }
+
+  .identity h1 {
+    font-size: clamp(48px, 5.1vw, 62px);
+  }
+
+  .gallery {
+    padding: 35px 25px;
+  }
+
+  .app-card {
+    gap: 22px;
+    padding: 22px;
+  }
+
+  .app-card__name {
+    font-size: 32px;
+  }
+}
+
+
+/* ========================================
+   MOBILE — 700px AND BELOW
+======================================== */
+
+@media (max-width: 700px) {
+  .portfolio-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    min-height: 0;
+    padding: 30px 25px 25px;
+    gap: 29px;
+
+    border-right: 0;
+    border-bottom: 1px solid #2a2d31;
+  }
+
+  .identity h1 {
+    font-size: clamp(43px, 8.4vw, 56px);
+    margin-bottom: 17px;
+  }
+
+  .identity h1::after {
+    width: 55px;
+    margin-top: 16px;
+  }
+
+  .identity p {
+    font-size: 14px;
+  }
+
+  .contact {
+    gap: 14px;
+  }
+
+  .socials {
+    gap: 9px;
+  }
+
+  .social-link {
+    width: 41px;
+    height: 41px;
+  }
+
+  .email-link {
+    padding-top: 14px;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .gallery {
+    display: block;
+    padding: 25px 18px 35px;
+  }
+
+  .app-list {
+    gap: 15px;
+  }
+
+  .app-card {
+    min-height: 120px;
+    padding: 16px;
+    gap: 19px;
+    border-radius: 16px;
+  }
+
+  .app-card__logo {
+    width: clamp(70px, 22vw, 110px);
+    border-radius: 15px;
+  }
+
+  .app-card__name {
+    font-size: clamp(22px, 6vw, 35px);
+  }
+
+  .app-card__external svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE — 375px AND BELOW
+======================================== */
+
+@media (max-width: 375px) {
+  .sidebar {
+    padding: 24px 17px;
+  }
+
+  .gallery {
+    padding: 20px 12px;
+  }
+
+  .app-card {
+    gap: 13px;
+    padding: 13px;
+  }
+
+  .app-card__logo {
+    width: 64px;
+  }
+
+  .app-card__name {
+    font-size: 21px;
+  }
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
