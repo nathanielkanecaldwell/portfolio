@@ -9,3 +9,6 @@ __pycache__/
 
 ./notes/
 licenses.txt
+
+combine.py
+./combined/
